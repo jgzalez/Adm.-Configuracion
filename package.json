@@ -1,17 +1,21 @@
 {
-  "name": "adm.-configuracion",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "nodemailer": "^6.9.8",
-    "sqlite3": "^5.1.7"
-  }
+    "name": "adm.-configuracion",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "nodemailer": "^6.9.8",
+        "sqlite3": "^5.1.7"
+    },
+    "devDependencies": {
+        "react-scripts": "^5.0.1"
+    }
 }

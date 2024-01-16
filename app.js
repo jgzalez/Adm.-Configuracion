@@ -7,14 +7,17 @@ const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
     host: 'mail.jgonzalezfals.dev',
-    port: 587, // Reemplaza con el puerto SMTP correspondiente
+    port: 465, // Reemplaza con el puerto SMTP correspondiente
     secure: true, // true para 465, false para otros puertos
     auth: {
         user: 'test@jgonzalezfals.dev',
         pass: 'santiagodecuba' // Contraseña de la cuenta de correo
     },
-    secureOptions: require('constants').SSL_OP_NO_TLSv1_2
-
+    secureOptions: require('constants').SSL_OP_NO_TLSv1_2,
+    tls: {
+        // do not fail on invalid certs
+        rejectUnauthorized: false
+    }
 });
 
 
