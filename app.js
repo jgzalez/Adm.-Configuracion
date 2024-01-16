@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
@@ -24,6 +25,7 @@ let transporter = nodemailer.createTransport({
 transporter.on('log', (log) => {
     console.log(log);
 });
+app.use(cors());
 
 
 // Permitir a Express entender JSON
