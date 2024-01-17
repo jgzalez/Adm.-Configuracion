@@ -3,7 +3,7 @@ require('dotenv').config();
 const cors = require('cors');
 const app = express();
 const port = 3000;
-
+const destinarioCorreo = 'android.oct7@gmail.com';
 const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
@@ -62,7 +62,7 @@ app.post('/archivo', (req, res) => {
             // Enviar correo notificando la creación
             let mailOptions = {
                 from: process.env.EMAIL_USER,
-                to: 'destinatario@example.com', // Dirección del destinatario
+                to: destinarioCorreo, // Dirección del destinatario
                 subject: 'Creación de Nuevo Archivo',
                 text: `Se ha creado un nuevo archivo con ID: ${archivoId}`
             };
@@ -133,7 +133,7 @@ app.put('/archivo/:id', (req, res) => {
             // Enviar correo notificando el cambio
             let mailOptions = {
                 from: process.env.EMAIL_USER,
-                to: 'destinatario@example.com', // Dirección del destinatario
+                to: destinarioCorreo, // Dirección del destinatario
                 subject: 'Notificación de Cambio en Archivo',
                 text: `Se ha realizado un cambio en el archivo con ID: ${req.params.id}`
             };
@@ -176,7 +176,7 @@ app.delete('/archivo/:id', (req, res) => {
             // Enviar correo notificando la eliminación
             let mailOptions = {
                 from: process.env.EMAIL_USER,
-                to: 'destinatario@example.com', // Dirección del destinatario
+                to: destinarioCorreo, // Dirección del destinatario
                 subject: 'Eliminación de Archivo',
                 text: `Se ha eliminado el archivo con ID: ${archivoId}`
             };
