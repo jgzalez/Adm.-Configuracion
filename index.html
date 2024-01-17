@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Frontend</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>CRUD de Archivos</h1>
+
+        <!-- Botón para crear un nuevo archivo -->
+        <button id="showCreateForm">Crear Nuevo Archivo</button>
+
+        <!-- Formulario para crear un nuevo archivo -->
+        <div id="createForm" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeCreateForm">&times;</span>
+                <h2>Crear Nuevo Archivo</h2>
+                <form>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" placeholder="Nombre del archivo" required>
+                    <label for="contenido">Contenido:</label>
+                    <textarea id="contenido" placeholder="Contenido del archivo" required></textarea>
+                    <label for="fecha_creacion">Fecha de Creación:</label>
+                    <input type="date" id="fecha_creacion" required>
+                    <button type="submit">Crear Archivo</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Lista de archivos -->
+        <h2>Archivos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>CONTENIDO</th>
+                    <th>FECHA</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody id="archivoList">
+                <!-- Aquí se cargarán los archivos -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para editar archivo -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeEditModal">&times;</span>
+            <h2>Editar Archivo</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <label for="editNombre">Nombre:</label>
+                <input type="text" id="editNombre" placeholder="Nombre" required>
+                <label for="editContenido">Contenido:</label>
+                <textarea id="editContenido" placeholder="Contenido" required></textarea>
+                <label for="editFechaCreacion">Fecha de Creación:</label>
+                <input type="date" id="editFechaCreacion" required>
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+    <!-- Modal para eliminar archivo -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeDeleteModal">&times;</span>
+            <h2>Eliminar Archivo</h2>
+            <form id="deleteForm">
+                <input type="hidden" id="deleteId">
+                <p>¿Estás seguro de que quieres eliminar este archivo?</p>
+                <button type="submit">Eliminar Archivo</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
